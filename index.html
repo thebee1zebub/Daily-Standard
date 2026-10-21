@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Daily Standard - Newsroom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+<script>var t;try{t=JSON.parse(localStorage.getItem('tds_th'))}catch(e){}document.documentElement.dataset.t=t||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#e9edf2;--cd:#fff;--ink:#0f1b2d;--mu:#5d6b7e;--ln:#d9e0e8;--ac:#ff5a1f;--ok:#0a8f6a;--sh:0 1px 2px rgba(15,27,45,.06),0 6px 20px rgba(15,27,45,.05)}
+[data-t=dark]{--bg:#0a1220;--cd:#111c2e;--ink:#e8edf5;--mu:#8a98ad;--ln:#1f2c42;--sh:0 6px 20px rgba(0,0,0,.35);color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 "Hind Siliguri",system-ui,"Segoe UI",sans-serif}
+h1,h2,h3,.dsp{font-family:"Bricolage Grotesque","Hind Siliguri",system-ui,sans-serif}
+.wrap{max-width:1360px;margin:auto;padding:0 18px}
+.top{background:#0f1b2d;color:#fff;border-bottom:3px solid var(--ac)}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 18px;flex-wrap:wrap}
+.brand h1{font-size:26px;font-weight:800;letter-spacing:-.01em;line-height:1}.brand h1 em{font-style:normal;color:var(--ac)}
+.brand small{color:#93a3ba;font-size:12px}
+.hr{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.clk{text-align:right;margin-right:10px}.clk b{font:800 30px/1 "Bricolage Grotesque",sans-serif;font-variant-numeric:tabular-nums;display:block}.clk small{color:#93a3ba;font-size:12px}
+.btn{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:7px 11px;font:500 13px "Hind Siliguri",sans-serif;cursor:pointer}
+.tick{display:flex;background:#0a1322;color:#d6deea;font-size:14px;overflow:hidden}
+.live{background:var(--ac);color:#fff;font-weight:600;padding:8px 16px;z-index:1;white-space:nowrap}
+.tr{overflow:hidden;flex:1}.tr:hover #tk{animation-play-state:paused}
+#tk{display:inline-block;white-space:nowrap;padding:8px 0;animation:mq 150s linear infinite}
+#tk span{margin:0 24px}#tk span:before{content:"";display:inline-block;width:6px;height:6px;background:var(--ac);border-radius:50%;margin-right:10px;vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){#tk{animation:none}}
+.kp{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+.k{background:var(--cd);border:1px solid var(--ln);border-radius:10px;padding:14px 16px;box-shadow:var(--sh)}
+.k small{color:var(--mu);font-size:13px}.k b{font:800 32px/1.1 "Bricolage Grotesque",sans-serif;display:block}
+.bar{height:5px;background:var(--ln);border-radius:9px;margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ok);width:0;transition:width .4s}
+#tg{width:58px;display:inline;padding:2px 6px;font:600 16px "Hind Siliguri"}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:start}
+.card{background:var(--cd);border:1px solid var(--ln);border-radius:10px;padding:16px;box-shadow:var(--sh);margin-bottom:16px}
+.card h2{font-size:17px;font-weight:800}
+.fh{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+input,textarea,select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--ln);border-radius:6px;padding:8px 10px;width:100%}
+input:focus,textarea:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+.fh input{max-width:380px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.ch{padding:3px 12px;border-radius:99px;border:1px solid var(--ln);background:none;color:var(--mu);font:500 13px "Hind Siliguri",sans-serif;cursor:pointer}.ch.on{background:var(--ink);color:var(--cd);border-color:var(--ink)}
+.b{background:var(--cd);color:var(--ink);border:1px solid var(--ln);border-radius:6px;padding:5px 10px;font:500 13px "Hind Siliguri",sans-serif;cursor:pointer;white-space:nowrap}.b:hover{border-color:var(--ac)}.b.p{background:var(--ac);border-color:var(--ac);color:#fff}
+#fl{max-height:780px;overflow:auto}
+.row{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--ln);align-items:flex-start}
+.tm{min-width:30px;color:var(--mu);font-size:13px;font-variant-numeric:tabular-nums;padding-top:2px}
+.row a{color:var(--ink);text-decoration:none;font-weight:600;font-size:16px;line-height:1.35}.row a:hover{color:var(--ac)}
+.sr{font-size:13px;color:var(--ok);font-weight:500;display:block}
+.nw{background:var(--ac);color:#fff;font-size:11px;border-radius:4px;padding:0 5px;margin-right:6px}
+.st{color:var(--mu);font-size:13px}
+.wx b{font:800 36px/1 "Bricolage Grotesque",sans-serif}
+#fx{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}#fx small{color:var(--mu);display:block;font-size:12px}#fx b{font:600 15px "Hind Siliguri"}
+.lk{display:flex;flex-direction:column;gap:6px}.lk a{color:var(--ink);text-decoration:none;padding:7px 10px;border:1px solid var(--ln);border-radius:6px;font-size:14px}.lk a:hover{border-color:var(--ac);color:var(--ac)}
+.bd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.col{background:var(--bg);border-radius:8px;padding:10px;min-height:110px}.col h3{font-size:14px;margin-bottom:8px;display:flex;justify-content:space-between}
+.sc{background:var(--cd);border:1px solid var(--ln);border-radius:6px;padding:10px;margin-bottom:8px;font-size:14px;font-weight:600;line-height:1.35}.sc small{display:block;color:var(--mu);font-weight:400}.sc div{display:flex;gap:4px;margin-top:8px}.sc .b{padding:2px 8px}
+.mo{position:fixed;inset:0;background:rgba(5,9,16,.65);display:none;align-items:center;justify-content:center;padding:14px;z-index:9}.mo.on{display:flex}
+.md{background:var(--cd);border-radius:12px;padding:20px;width:100%;max-width:640px;max-height:94vh;overflow:auto}
+.md label{display:block;font-size:13px;font-weight:600;color:var(--mu);margin:12px 0 4px}
+.pv{white-space:pre-wrap;background:var(--bg);border-left:3px solid var(--ac);padding:10px 12px;border-radius:6px;font-size:14px}
+.tg{display:flex;flex-wrap:wrap;gap:8px}.w2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ft{color:var(--mu);font-size:12px;text-align:center;padding:4px 18px 18px}
+@media(max-width:980px){.grid{grid-template-columns:1fr}.kp{grid-template-columns:1fr 1fr}.bd{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.bd{grid-template-columns:1fr}.clk{text-align:left}}
+
+.nav{display:flex;gap:4px;overflow-x:auto}.nav button{background:none;border:0;border-bottom:3px solid transparent;color:#93a3ba;padding:9px 16px;font:600 15px "Bricolage Grotesque","Hind Siliguri",sans-serif;cursor:pointer;white-space:nowrap}.nav button.on{color:#fff;border-color:var(--ac)}.nav span{background:var(--ac);color:#fff;border-radius:99px;padding:0 7px;font-size:12px;margin-left:4px}
+.hubg{display:grid;grid-template-columns:250px minmax(0,1fr);gap:16px;margin:18px 0;align-items:start}
+.side{position:sticky;top:8px;max-height:96vh;overflow:auto}.side label{display:block;font-size:13px;font-weight:600;color:var(--mu);margin:12px 0 4px}
+.fl2{display:flex;flex-direction:column;gap:2px}.fl2 button{display:flex;justify-content:space-between;gap:6px;background:none;border:0;color:var(--ink);padding:3px 8px;border-radius:5px;font:inherit;font-size:14px;cursor:pointer;text-align:left;width:100%}.fl2 button:hover{background:var(--bg)}.fl2 button.on{background:var(--ink);color:var(--cd)}.fl2 small{opacity:.7}
+.oe{display:flex;align-items:center;gap:4px}.oe>input{width:auto;padding:0}.oe .fl2{flex:1}
+.hw{display:flex;gap:12px;padding:10px 0;border-top:1px solid var(--ln);align-items:flex-start}.hw.sub{margin-left:42px;padding:7px 0;border-top:1px dashed var(--ln)}
+.hb{flex:1;min-width:0}.hb a{color:var(--ink);text-decoration:none;font-weight:600;font-size:16px;line-height:1.35}.hb a:hover{color:var(--ac)}
+.mt{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:13px;margin-top:3px}
+.ob{color:var(--ok);font-weight:600}.ob.t-tv{color:#8a5cf5}.ob.t-portal{color:#2f80e0}
+.ct{border:1px solid var(--ln);border-radius:4px;padding:0 6px;color:var(--mu)}.cv{color:var(--mu)}
+.sm{color:var(--mu);font-size:14px;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ac{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.ac select{width:auto}
+.nt{margin-top:6px;font-size:13px;padding:4px 8px}
+@media(max-width:900px){.hubg{grid-template-columns:1fr}.side{position:static;max-height:none}.hw{flex-wrap:wrap}}
+</style></head><body>
+<header class="top"><div class="wrap hd">
+<div class="brand"><h1>THE DAILY <em>STANDARD</em></h1><small>Newsroom desk: byte-size news for Bangladesh</small></div>
+<div class="hr"><div class="clk"><b id="clk">--:--:--</b><small id="dt"></small></div>
+<button class="btn" id="rf" title="Refresh now">Refresh in <span id="cd">5:00</span></button>
+<button class="btn" id="lg" title="Switch feed language">EN / বাংলা</button><button class="btn" id="dgb" title="See which news routes and outlets are working">Check sources</button><button class="btn" id="bkb" title="Save or restore your pipeline and saved headlines">Backup</button><button class="btn" id="th">Theme</button></div></div>
+<nav class="nav wrap" aria-label="Main"><button data-n="dash" data-a="go" data-v="dash" class="on">Dashboard</button><button data-n="hub" data-a="go" data-v="hub">Headlines Hub</button><button data-n="sav" data-a="go" data-v="sav">Saved<span id="sn">0</span></button></nav>
+<div class="tick"><span class="live">LIVE</span><div class="tr"><div id="tk"></div></div></div></header>
+<main class="wrap"><div class="card" id="sw" hidden style="margin-top:18px;border-color:var(--ac)"><p class="st">Your browser blocks storage inside this embed, so the pipeline and saved headlines last only until you close the page. Use Backup to save them, or host this file at its own address and link to it from your site.</p></div>
+<div id="v-dash">
+<section class="kp">
+<div class="k"><small>Headlines on the wire</small><b id="k1">0</b><small id="k1s"></small></div>
+<div class="k"><small>Being written</small><b id="k2">0</b></div>
+<div class="k"><small>Ready to post</small><b id="k3">0</b></div>
+<div class="k"><small>Posted today, target <input id="tg" type="number" min="1" aria-label="Daily post target"></small><b id="k4">0</b><div class="bar"><i id="bar"></i></div></div>
+</section>
+<div class="grid"><section class="card">
+<div class="fh"><div><h2>Live wire</h2><span class="st" id="st">Connecting...</span></div>
+<input id="q" placeholder="Filter headlines. Press Enter to search Bangladeshi outlets" aria-label="Search headlines"></div>
+<div class="chips" id="cats"></div><div class="chips" id="srcs"></div><div id="fl"></div></section>
+<aside>
+<div class="card wx"><h2>Dhaka now</h2><div id="wx" style="margin-top:8px">...</div></div>
+<div class="card"><h2>Taka exchange rates</h2><div id="fx" style="margin-top:10px">...</div></div>
+<div class="card"><h2>Trending in headlines</h2><div class="chips" id="trd" style="margin-top:10px"></div></div>
+<div class="card"><h2>Desk links</h2><div class="lk" style="margin-top:10px">
+<a href="https://business.facebook.com" target="_blank" rel="noopener">Meta Business Suite</a>
+<a href="https://www.canva.com" target="_blank" rel="noopener">Canva</a>
+<a href="https://trends.google.com/trending?geo=BD" target="_blank" rel="noopener">Google Trends Bangladesh</a>
+<a href="https://www.bb.org.bd" target="_blank" rel="noopener">Bangladesh Bank</a></div></div>
+</aside></div>
+<section class="card"><div class="fh"><h2>Story pipeline</h2><button class="b p" data-a="nw">New story</button></div><div class="bd" id="bd"></div></section></div>
+<div id="v-hub" hidden><div class="hubg">
+<aside class="card side">
+<input id="hq" placeholder='Keywords: "exact phrase" -exclude' aria-label="Keywords">
+<label for="hsort">Sort by</label><select id="hsort"><option value="new">Newest</option><option value="rel">Most relevant</option><option value="cov">Most covered</option></select>
+<label for="hrng">Published</label><select id="hrng"><option value="1">Last hour</option><option value="6">Last 6 hours</option><option value="24" selected>Last 24 hours</option><option value="48">Last 2 days</option><option value="0">Any time</option></select>
+<label for="hty">Outlet type</label><select id="hty"><option value="all">All types</option><option value="paper">Newspapers</option><option value="portal">News portals</option><option value="tv">TV news</option></select>
+<label>Category</label><div class="fl2" id="hcat"></div>
+<label>Outlets (tick to fetch)</label><div id="hout"></div>
+</aside>
+<section class="card"><div class="fh"><div><h2>Bangladesh Headlines Hub</h2><span class="st" id="hst"></span></div>
+<div class="tg"><label class="st"><input type="checkbox" id="hgr" checked style="width:auto"> Group similar</label><label class="st"><input type="checkbox" id="hsm" checked style="width:auto"> Summaries</label><select id="hcol" aria-label="Save to collection" style="width:auto"></select><button class="b p" data-a="rh">Refresh</button></div></div>
+<div class="chips" id="hem"></div><div id="hfl"></div><button class="b" id="hmore" data-a="hm" hidden style="margin-top:12px">Show more</button>
+<p class="st" style="margin-top:12px">Each outlet's own RSS feed is found and scanned automatically every 2 minutes; outlets without a feed fall back to Google News. Every link opens the original article. Similar-story grouping also matches Bangla and English headlines through a keyword dictionary, so it can miss some pairs. Only Bangladeshi outlets are used, and international stories are limited to the 12 newest.</p></section>
+</div></div>
+<div id="v-sav" hidden><div class="card" style="margin-top:18px"><div class="fh"><h2>Saved headlines</h2><div class="tg"><input id="nc" placeholder="New collection name" style="width:220px" aria-label="New collection name"><button class="b p" data-a="ac">Add collection</button></div></div><p class="st">Group headlines into collections for research, reporting or analysis. Notes save as you type.</p></div><div id="savl"></div></div>
+</main>
+<p class="ft">Headlines come only from Bangladeshi newspapers, portals and TV channels, fetched through Google News and a free RSS proxy. International stories are limited to a few. Rewrite every story in your own words and credit the original outlet. Your pipeline is saved in this browser only.</p>
+<div class="mo" id="dg"><div class="md" style="max-width:760px"><div class="fh"><h2>Source check</h2><button class="b" data-k="dx">Close</button></div><p class="st">Shows which fetch route and which outlet is working. Press Test routes first. If every route fails, your network or the free services are blocking the requests.</p><div style="margin:12px 0"><label for="wki" style="font-size:13px;font-weight:600">Your own proxy address (recommended when the free routes fail)</label><div class="tg" style="margin-top:6px"><input id="wki" placeholder="https://your-name.workers.dev/?url=" style="flex:1;min-width:220px"><button class="b p" data-k="ws">Save</button></div><p class="st" style="margin-top:6px">Free and takes about 5 minutes: create a Cloudflare Worker, paste the worker.js file into it, deploy, then paste its address here.</p></div><div id="dgc" style="overflow:auto"></div><div class="tg" style="margin-top:12px"><button class="b p" data-k="dt">Test routes</button><button class="b" data-k="dr">Re-scan everything</button></div></div></div>
+<div class="mo" id="bk"><div class="md"><div class="fh"><h2>Backup</h2><button class="b" data-k="x">Close</button></div><p class="st">Copy this text and keep it somewhere safe. To restore, paste a saved backup here and press Restore. It holds your story pipeline, saved headlines, collections and outlet choices.</p><textarea id="bt" rows="8" style="margin-top:10px" aria-label="Backup text"></textarea><div class="tg" style="margin-top:12px"><button class="b p" data-k="c">Copy</button><button class="b" data-k="r">Restore</button></div></div></div>
+<div class="mo" id="mo"><div class="md">
+<div class="fh"><h2>Byte desk</h2><button class="b" data-a="x">Close</button></div>
+<small id="eo" class="st"></small> <a id="el" target="_blank" rel="noopener" style="font-size:13px;color:var(--ac)">Open original</a>
+<label>Your headline <span id="hc"></span></label><input id="eh" placeholder="Rewrite in your own words, short and punchy">
+<label>Byte text <span id="wc"></span></label><textarea id="eb" rows="6" placeholder="Who, what, why it matters. Aim for 40 to 60 words."></textarea>
+<div class="w2"><div><label>Category</label><select id="ec"></select></div><div><label>Stage</label><select id="es"></select></div></div>
+<label>Caption preview</label><div class="pv" id="pv"></div><p class="st" id="cw" hidden style="color:var(--ac);margin-top:6px">Your headline is very close to the original. Rewrite it in your own words.</p>
+<div class="tg" style="margin-top:14px"><button class="b p" data-a="sa">Save</button><button class="b" data-a="cc" id="cc">Copy caption</button><button class="b" data-a="dl">Delete</button></div>
+</div></div>
+<script>
+const $=s=>document.querySelector(s);
+const MEM={},SOK=(()=>{try{localStorage.setItem('tds__t','1');localStorage.removeItem('tds__t');return true}catch(e){return false}})();
+const L={g(k,d){try{const v=JSON.parse(localStorage.getItem('tds_'+k));if(v!=null)return v}catch(e){}return k in MEM?MEM[k]:d},s(k,v){MEM[k]=v;try{localStorage.setItem('tds_'+k,JSON.stringify(v))}catch(e){}}};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const KEY=''; /* optional rss2json API key: raises the 10-item limit per feed */
+const INTL=8,HINTL=12; /* international stories kept: dashboard wire / headlines hub */
+const WIRE={en:['thedailystar.net','dhakatribune.com','tbsnews.net','thefinancialexpress.com.bd','newagebd.net','daily-sun.com','bdnews24.com','bssnews.net','unb.com.bd','theindependentbd.com','observerbd.com'],bn:['prothomalo.com','kalerkantho.com','jugantor.com','samakal.com','ittefaq.com.bd','bd-pratidin.com','banglatribune.com','jagonews24.com','dhakapost.com','jamuna.tv','somoynews.tv','channel24bd.tv','ekattor.tv','dbcnews.tv','rtvonline.com','ntvbd.com','risingbd.com','banglanews24.com']};
+const CATS={top:{n:'Top',q:['Bangladesh OR Dhaka','বাংলাদেশ OR ঢাকা']},
+nation:{n:'National',q:['Dhaka OR Chattogram OR police OR court OR accident OR flood OR crime','ঢাকা OR চট্টগ্রাম OR পুলিশ OR আদালত OR দুর্ঘটনা OR বন্যা OR গ্রেপ্তার']},
+pol:{n:'Politics',q:['politics OR election OR BNP OR Awami OR Jamaat OR parliament OR adviser OR minister','রাজনীতি OR নির্বাচন OR বিএনপি OR আওয়ামী OR জামায়াত OR সংসদ OR মন্ত্রী']},
+biz:{n:'Economy & Business',q:['economy OR business OR taka OR inflation OR budget OR stock OR export OR remittance','অর্থনীতি OR ব্যবসা OR টাকা OR মূল্যস্ফীতি OR বাজেট OR শেয়ারবাজার OR রপ্তানি OR রেমিট্যান্স']},
+sport:{n:'Sports',q:['cricket OR football OR BCB OR BPL OR Tigers','ক্রিকেট OR ফুটবল OR বিসিবি OR বিপিএল OR টাইগার']},
+tech:{n:'Tech',q:['technology OR startup OR digital OR ICT OR internet OR AI','প্রযুক্তি OR স্টার্টআপ OR ডিজিটাল OR আইসিটি OR ইন্টারনেট OR এআই']},
+ent:{n:'Entertainment',q:['Dhallywood OR film OR drama OR actor OR singer OR music','সিনেমা OR নাটক OR অভিনেতা OR অভিনেত্রী OR গান OR বিনোদন']},
+health:{n:'Health',q:['health OR hospital OR dengue OR doctor OR medicine','স্বাস্থ্য OR হাসপাতাল OR ডেঙ্গু OR চিকিৎসক OR ওষুধ']},
+world:{n:'International',q:['India OR China OR "United States" OR Myanmar OR Rohingya OR Gaza OR "Middle East" OR "United Nations"','ভারত OR চীন OR যুক্তরাষ্ট্র OR মিয়ানমার OR রোহিঙ্গা OR গাজা OR মধ্যপ্রাচ্য OR জাতিসংঘ']}};
+const STG=['inbox','writing','ready','posted'];
+let LG=L.g('lg','en'),cat='top',src='all',q='',items=[],SR=[],B=L.g('bd',{}),fresh=new Set(),nx=300,ED=null;
+const hs=s=>{let h=0;for(const c of s.toLowerCase())h=(h*31+c.charCodeAt(0))|0;return'h'+(h>>>0).toString(36)};
+const ago=d=>{const m=Math.max(0,(Date.now()-d)/6e4|0);return m<60?m+'m':m<1440?(m/60|0)+'h':(m/1440|0)+'d'};
+const find=id=>items.find(x=>x.id==id)||SR.find(x=>x.id==id);
+function gu(k,qq,age,pt){
+ const bn=qq?/[\u0980-\u09FF]/.test(qq):LG=='bn',p=bn?'hl=bn&gl=BD&ceid=BD:bn':'hl=en-BD&gl=BD&ceid=BD:en',kw=qq||CATS[k].q[bn?1:0],w=WIRE[bn?'bn':'en'],
+ l=pt==1?w.slice(8,16):pt==2?w.slice(16):w.slice(0,8);
+ if(!l.length)return'';
+ return'https://news.google.com/rss/search?q='+encodeURIComponent('('+kw+') when:'+(age||'1d')+' ('+l.map(d=>'site:'+d).join(' OR ')+')')+'&'+p}
+const fq=async(k,qq,age)=>{const r=await fx(gu(k,qq,age));return r.length?r:(await Promise.all([1,2].map(n=>gu(k,qq,age,n)).filter(Boolean).map(u=>fx(u)))).flat()};
+let WK=L.g('wk','')||'', /* your own Cloudflare Worker address: set it in Check sources, or paste it here (see worker.js) */
+TU='https://news.google.com/rss?hl=en-BD&gl=BD&ceid=BD:en';
+let TMO=window.__TMO||1e4,PF=0;const MH={},OS={},RTR={};
+const MT0=[{n:'rss2json',j:1,f:u=>'https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(u)+(KEY?'&api_key='+KEY+'&count=40':'')},
+ {n:'allorigins',f:u=>'https://api.allorigins.win/raw?url='+encodeURIComponent(u)},
+ {n:'codetabs',f:u=>'https://api.codetabs.com/v1/proxy?quest='+encodeURIComponent(u)},
+ {n:'corsproxy',f:u=>'https://corsproxy.io/?url='+encodeURIComponent(u)}];
+let MT=[];const mtb=()=>{MT=(WK?[{n:'your proxy',f:u=>WK+encodeURIComponent(u)}]:[]).concat(MT0)};mtb();
+const wkn=v=>{v=(v||'').trim();return v&&!/url=$/.test(v)?v.replace(/\/?(\?.*)?$/,'/?url='):v};
+async function pull(m,u){const r=await fetch(m.f(u),{signal:AbortSignal.timeout?AbortSignal.timeout(m.n=='your proxy'?TMO*1.5:TMO):undefined});
+ if(r.status==404||r.status==410)return{st:404};
+ if(!r.ok)throw new Error('HTTP '+r.status);
+ if(m.j){const j=await r.json();if(j.status!='ok')throw new Error(j.message||'rss2json error');return{items:j.items.map(i=>({t:i.title,l:i.link,d:new Date(i.pubDate.replace(' ','T')+'Z'),s:i.description||''}))}}
+ const t=await r.text();if(!t)throw new Error('empty reply');return{t}}
+async function get(u,raw){ /* {items}|{t}|{st:404}; null when every route fails. A route that fails 3 times in a row is paused for 5 minutes */
+ const dn=m=>(MH[m.n]||{}).d>Date.now()?1:0,all=MT.filter(m=>!(raw&&m.j)),up=all.filter(m=>!dn(m)),ms=up.length?up:all.slice(0,1); /* paused routes are skipped; if all are paused only one is probed */
+ for(const m of ms){const h=MH[m.n]=MH[m.n]||{ok:0,bad:0,f:0,d:0,err:''};
+  const gn=/^https:\/\/news\.google\.com/.test(u);
+  const na=m.n=='your proxy'?2:1;
+  for(let k=0;k<na;k++){try{const r=await pull(m,u);h.ok++;if(gn)h.f=0;h.d=0;return r}catch(e){h.bad++;h.err=String(e.message||e).slice(0,50);if(k==na-1&&gn&&++h.f>=3)h.d=Date.now()+3e5}}}
+ PF++;return null}
+function parseX(t){try{const x=new DOMParser().parseFromString(t,'text/xml');
+ return[...x.querySelectorAll('item,entry')].map(i=>{const g=n=>((i.querySelector(n)||{}).textContent||'').trim(),le=i.querySelector('link');
+  return{t:g('title'),l:le?(le.textContent.trim()||le.getAttribute('href')||''):g('guid'),d:new Date(g('pubDate')||g('published')||g('updated')),s:g('description')||g('summary')}}).filter(y=>y.t&&/^https?:/.test(y.l))}catch(e){return[]}}
+async function fx(u){const r=await get(u);if(!r)return[];return r.items||(r.t?parseX(r.t):[])}
+const gdt=v=>new Date(String(v||'').replace(/^(\d{4})(\d\d)(\d\d)T(\d\d)(\d\d)(\d\d)Z$/,'$1-$2-$3T$4:$5:$6Z'));
+async function gdelt(){let n=0;const h=MH.gdelt=MH.gdelt||{ok:0,bad:0,f:0,d:0,err:''},ds=OUT.map(o=>o[1]);
+ for(let i=0;i<ds.length;i+=8){
+  const u='https://api.gdeltproject.org/api/v2/doc/doc?query='+encodeURIComponent('('+ds.slice(i,i+8).map(d=>'domain:'+d).join(' OR ')+')')+'&mode=artlist&maxrecords=75&format=json&sort=datedesc&timespan=1d';
+  try{const r=await fetch(u,{signal:AbortSignal.timeout?AbortSignal.timeout(15e3):undefined});if(!r.ok)throw new Error('HTTP '+r.status);const j=await r.json(),by={};
+   (j.articles||[]).forEach(a=>{const dm=String(a.domain||'').replace(/^www\./,''),o=OUT.find(x=>dm==x[1]||dm.endsWith('.'+x[1]));if(o&&a.title&&a.url)(by[o[0]]=by[o[0]]||[o,[]])[1].push({t:a.title,l:a.url,d:gdt(a.seendate),s:'',dr:1})});
+   Object.values(by).forEach(([o,rs])=>{mh(o,rs);n+=rs.length;OS[o[0]]={m:'gdelt',n:rs.length,t:Date.now()}});h.ok++;h.err=''}
+  catch(e){h.bad++;h.err=String(e.message||e).slice(0,50)}
+  if(i+8<ds.length)await new Promise(r=>setTimeout(r,5200))}
+ return n}
+function pr(o){const m=o.t.lastIndexOf(' - '),h=m>0?o.t.slice(0,m):o.t;return{id:hs(h),h,s:m>0?o.t.slice(m+3):'Unknown',l:/^https?:/.test(o.l)?o.l:'#',d:isNaN(o.d)?new Date():o.d}}
+async function load(){
+ $('#st').textContent='Syncing...';
+ const ks=Object.keys(CATS),rs=await Promise.all(ks.map(k=>fq(k))),m=new Map();
+ rs.forEach((r,i)=>r.forEach(o=>{const p=pr(o),e=m.get(p.id);e?e.c.add(ks[i]):m.set(p.id,{...p,c:new Set([ks[i]])})}));
+ let wn=0;const nw=[...m.values()].sort((a,b)=>b.d-a.d).filter(x=>!(x.c.size==1&&x.c.has('world'))||++wn<=INTL),pv=items.length?new Set(items.map(x=>x.id)):new Set(L.g('seen',[]));
+ if(pv.size)nw.forEach(x=>{if(!pv.has(x.id))fresh.add(x.id)});
+ if(nw.length){items=nw;L.s('seen',nw.slice(0,400).map(x=>x.id))}
+ nx=300;dmerge();
+ $('#st').textContent=nw.length?'Updated '+new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Dhaka'})+' with '+items.length+' headlines':'Could not reach any news route. Open Check sources and add your own proxy.';
+}
+const ch=(a,v,t,on)=>`<button class="ch${on?' on':''}" data-a="${a}" data-v="${esc(v)}">${esc(t)}</button>`;
+function rf(){
+ const base=cat=='search'?SR:items.filter(x=>x.c.has(cat)),ss={};
+ base.forEach(x=>ss[x.s]=(ss[x.s]||0)+1);
+ const top=Object.entries(ss).sort((a,b)=>b[1]-a[1]).slice(0,8).map(x=>x[0]);
+ $('#cats').innerHTML=Object.entries(CATS).map(([k,v])=>ch('c',k,v.n,cat==k)).join('')+(SR.length?ch('c','search','Search results',cat=='search'):'');
+ $('#srcs').innerHTML=ch('s','all','All outlets',src=='all')+top.map(s=>ch('s',s,s,src==s)).join('');
+ const ql=q.toLowerCase(),l=base.filter(x=>(src=='all'||x.s==src)&&(!ql||(x.h+x.s).toLowerCase().includes(ql))).slice(0,70);
+ $('#fl').innerHTML=l.map(x=>`<div class="row"><span class="tm">${ago(x.d)}</span><div style="flex:1">${fresh.has(x.id)?'<span class="nw">NEW</span>':''}<a href="${esc(x.l)}" target="_blank" rel="noopener">${esc(x.h)}</a><span class="sr">${esc(x.s)}</span></div><button class="b p" data-a="by" data-i="${x.id}">Byte it</button><button class="b" data-a="sv" data-i="${x.id}" title="Save to inbox">Save</button></div>`).join('')||'<p class="st" style="padding:16px 0">No headlines match. Clear the filter or pick another category.</p>';
+}
+function rk(){
+ const v=Object.values(B),n=s=>v.filter(x=>x.st==s).length,td=new Date().toDateString(),tg=L.g('tg',20),
+ pt=v.filter(x=>x.st=='posted'&&x.pa&&new Date(x.pa).toDateString()==td).length;
+ $('#k1').textContent=items.length;$('#k1s').textContent=items.filter(x=>Date.now()-x.d<36e5).length+' in the last hour';
+ $('#k2').textContent=n('writing');$('#k3').textContent=n('ready');$('#k4').textContent=pt;
+ if(document.activeElement.id!='tg')$('#tg').value=tg;$('#bar').style.width=Math.min(100,pt/tg*100)+'%';
+}
+function rb(){
+ const v=Object.values(B).sort((a,b)=>b.ts-a.ts);
+ $('#bd').innerHTML=STG.map((s,i)=>{const l=v.filter(x=>x.st==s);
+ return`<div class="col"><h3>${s[0].toUpperCase()+s.slice(1)}<span>${l.length}</span></h3>${l.map(x=>`<div class="sc"><span>${esc(x.h||x.o||'Untitled')}</span><small>${esc(x.s||'Manual story')}</small><div>${i?`<button class="b" data-a="mv" data-i="${x.id}" data-v="-1" title="Move back">&lt;</button>`:''}<button class="b" data-a="ed" data-i="${x.id}">Edit</button>${i<3?`<button class="b" data-a="mv" data-i="${x.id}" data-v="1" title="Move forward">&gt;</button>`:''}</div></div>`).join('')}</div>`}).join('');
+}
+const SW=new Set('this that with from have will been were after about over into their says said more than what when your also amid could would they them than which while where there here against between under only just'.split(' '));
+function rt(){
+ const c={};items.forEach(x=>(x.h.toLowerCase().match(/[\p{L}\p{M}]{4,}/gu)||[]).forEach(w=>{if(!SW.has(w))c[w]=(c[w]||0)+1}));
+ $('#trd').innerHTML=Object.entries(c).filter(x=>x[1]>1).sort((a,b)=>b[1]-a[1]).slice(0,16).map(([w,n])=>`<button class="ch" data-a="w" data-v="${esc(w)}">${esc(w)} ${n}</button>`).join('')||'<span class="st">Building from today\'s headlines...</span>';
+}
+function tk(){const h=items.filter(x=>!(x.c.size==1&&x.c.has('world'))).slice(0,14).map(x=>`<span>${esc(x.h)}</span>`).join('');$('#tk').innerHTML=h+h}
+function ren(){rf();rk();rb();rt();tk();document.title=(fresh.size?'('+fresh.size+') ':'')+'The Daily Standard - Newsroom'}
+/* byte desk */
+const cap=()=>`${$('#eh').value.trim()}\n\n${$('#eb').value.trim()}\n\nSource: ${ED.s||'-'}\n#DailyStandard #Bangladesh #${(CATS[$('#ec').value]||{n:'News'}).n.replace(/\W/g,'')}`;
+function pv(){const ta=tok($('#eh').value),tb=tok((ED&&ED.o)||'');$('#cw').hidden=!(ta.size>2&&tb.size&&[...ta].filter(w=>tb.has(w)).length/Math.max(ta.size,tb.size)>=.6);const w=$('#eb').value.trim().split(/\s+/).filter(Boolean).length;$('#hc').textContent='('+$('#eh').value.length+' characters)';$('#wc').textContent='('+w+' words, aim for 40 to 60)';$('#pv').textContent=cap()}
+function edit(s){
+ ED={id:s.id||'m'+Date.now(),o:s.o||'',h:s.h||'',b:s.b||'',s:s.s||'',l:s.l||'',c:s.c||'top',st:s.st||'writing',ts:s.ts||Date.now(),pa:s.pa||null};
+ $('#eo').textContent=ED.o?'Original: '+ED.o:'Manual story';$('#el').style.display=ED.l?'':'none';$('#el').href=ED.l||'#';
+ $('#eh').value=ED.h;$('#eb').value=ED.b;$('#ec').value=ED.c;$('#es').value=ED.st;pv();$('#mo').classList.add('on');$('#eh').focus();
+}
+function cp(t){const f=()=>{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove()};
+ try{navigator.clipboard.writeText(t).catch(f)}catch(e){f()}}
+document.addEventListener('click',e=>{
+ const t=e.target.closest('[data-a]');if(!t)return;const a=t.dataset.a,i=t.dataset.i,v=t.dataset.v,it=i&&find(i);
+ if(a=='c'){cat=v;src='all';rf()}else if(a=='s'){src=v;rf()}else if(a=='w'){q=v;$('#q').value=v;rf()}
+ else if(a=='by'){B[i]?edit(B[i]):edit({id:it.id,o:it.h,s:it.s,l:it.l,c:[...(it.c||['top'])][0]})}
+ else if(a=='sv'){if(!B[i]){B[i]={id:it.id,o:it.h,h:'',b:'',s:it.s,l:it.l,c:[...(it.c||['top'])][0],st:'inbox',ts:Date.now()};L.s('bd',B);rb();rk()}}
+ else if(a=='mv'){const x=B[i],n=Math.min(3,Math.max(0,STG.indexOf(x.st)+ +v));x.st=STG[n];x.pa=n==3?Date.now():null;L.s('bd',B);rb();rk()}
+ else if(a=='ed')edit(B[i]);else if(a=='nw')edit({});else if(a=='x')$('#mo').classList.remove('on');
+ else if(a=='sa'){const p=B[ED.id]||{};B[ED.id]={...ED,h:$('#eh').value.trim(),b:$('#eb').value.trim(),c:$('#ec').value,st:$('#es').value,pa:$('#es').value=='posted'?(p.pa||Date.now()):null};L.s('bd',B);$('#mo').classList.remove('on');rb();rk()}
+ else if(a=='dl'){delete B[ED.id];L.s('bd',B);$('#mo').classList.remove('on');rb();rk()}
+ else if(a=='cc'){cp(cap());t.textContent='Copied';setTimeout(()=>t.textContent='Copy caption',1500)}
+});
+['#eh','#eb','#ec'].forEach(s=>$(s).addEventListener('input',pv));
+$('#ec').innerHTML=Object.entries(CATS).map(([k,v])=>`<option value="${k}">${v.n}</option>`).join('');
+$('#es').innerHTML=STG.map(s=>`<option value="${s}">${s[0].toUpperCase()+s.slice(1)}</option>`).join('');
+$('#q').addEventListener('input',e=>{q=e.target.value;rf()});
+$('#q').addEventListener('keydown',async e=>{if(e.key=='Enter'&&q.trim()){$('#st').textContent='Searching the wire...';SR=(await fq(null,q.trim(),'7d')).map(pr);cat='search';src='all';q='';$('#q').value='';rf();$('#st').textContent=SR.length+' results'}});
+$('#tg').addEventListener('change',e=>{L.s('tg',Math.max(1,+e.target.value||20));rk()});
+$('#rf').onclick=()=>{load();hload()};
+$('#lg').onclick=()=>{LG=LG=='en'?'bn':'en';L.s('lg',LG);items=[];SR=[];cat='top';fresh.clear();load()};
+$('#th').onclick=()=>{const n=document.documentElement.dataset.t=='dark'?'light':'dark';document.documentElement.dataset.t=n;L.s('th',n)};
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){fresh.clear();ren();if(Date.now()-HT>6e4)hload()}});
+/* clock and auto refresh */
+setInterval(()=>{const n=new Date(),z={timeZone:'Asia/Dhaka'};
+ $('#clk').textContent=n.toLocaleTimeString('en-GB',z);
+ $('#dt').textContent=n.toLocaleDateString('en-GB',{...z,weekday:'long',day:'numeric',month:'long',year:'numeric'})+', Dhaka';
+ nx--;$('#cd').textContent=((nx/60)|0)+':'+String(nx%60).padStart(2,'0');if(nx<=0)load();
+ if(nx%60==0)rf();},1e3);
+/* side widgets */
+const wl=c=>c==0?'Clear sky':c<4?'Partly cloudy':c<50?'Fog':c<70?'Rain':c<80?'Snow':c<95?'Showers':'Thunderstorm';
+async function wx(){try{const c=(await(await fetch('https://api.open-meteo.com/v1/forecast?latitude=23.81&longitude=90.41&current=temperature_2m,relative_humidity_2m,weather_code&timezone=Asia%2FDhaka')).json()).current;
+ $('#wx').innerHTML=`<b>${Math.round(c.temperature_2m)}°C</b><br><span class="st">${wl(c.weather_code)}, humidity ${c.relative_humidity_2m}%</span>`}catch(e){$('#wx').textContent='Weather unavailable'}}
+async function fr(){try{const r=(await(await fetch('https://open.er-api.com/v6/latest/USD')).json()).rates;
+ $('#fx').innerHTML=['USD','EUR','GBP','SAR','AED','INR'].map(c=>`<div><small>1 ${c}</small><b>৳${(r.BDT/r[c]).toFixed(2)}</b></div>`).join('')}catch(e){$('#fx').textContent='Rates unavailable'}}
+/* ===== Headlines Hub ===== */
+const OUT=[['The Daily Star','thedailystar.net','paper','en'],['Dhaka Tribune','dhakatribune.com','paper','en'],['The Business Standard','tbsnews.net','paper','en'],['The Financial Express','thefinancialexpress.com.bd','paper','en'],['New Age','newagebd.net','paper','en'],['Daily Sun','daily-sun.com','paper','en'],
+['Prothom Alo','prothomalo.com','paper','bn'],['Kaler Kantho','kalerkantho.com','paper','bn'],['Jugantor','jugantor.com','paper','bn'],['Samakal','samakal.com','paper','bn'],['Ittefaq','ittefaq.com.bd','paper','bn'],['Bangladesh Pratidin','bd-pratidin.com','paper','bn'],
+['bdnews24','bdnews24.com','portal','en'],['Bangla Tribune','banglatribune.com','portal','bn'],['Jagonews24','jagonews24.com','portal','bn'],['Dhaka Post','dhakapost.com','portal','bn'],
+['Jamuna TV','jamuna.tv','tv','bn'],['Somoy TV','somoynews.tv','tv','bn'],['Channel 24','channel24bd.tv','tv','bn'],['Ekattor TV','ekattor.tv','tv','bn'],['DBC News','dbcnews.tv','tv','bn'],['RTV','rtvonline.com','tv','bn'],['Channel i','channelionline.com','tv','bn'],['NTV','ntvbd.com','tv','bn']];
+const RSS={}; /* optional: RSS['The Daily Star']='https://.../rss.xml' makes the hub use that outlet's own feed (and show its summaries) */
+const CN=['Politics','Economy','Business','National','International','Technology','Education','Sports','Entertainment','Health','Other'];
+const MAPC={Politics:'pol',Economy:'biz',Business:'biz',National:'nation',International:'world',Technology:'tech',Education:'top',Sports:'sport',Entertainment:'ent',Health:'health',Other:'top'};
+const CT=[
+['Sports',/cricket|football|\bbpl\b|\bbcb\b|fifa|olympic|tournament|tigers|batsman|ক্রিকেট|ফুটবল|বিপিএল|ম্যাচ|সিরিজ|টাইগার/i],
+['Entertainment',/\bfilm\b|movie|actor|actress|singer|drama|dhallywood|bollywood|netflix|concert|চলচ্চিত্র|সিনেমা|নাটক|অভিনেত|গায়ক|শিল্পী/i],
+['Education',/school|student|universit|\bexam|\bssc\b|\bhsc\b|admission|teacher|campus|বিশ্ববিদ্যালয়|শিক্ষার্থী|পরীক্ষা|ভর্তি|শিক্ষক|স্কুল|কলেজ|এসএসসি|এইচএসসি|শিক্ষা/i],
+['Technology',/\btech|\bai\b|artificial|software|\bapp\b|internet|cyber|digital|startup|5g|robot|ডিজিটাল|প্রযুক্তি|সাইবার|ইন্টারনেট|অ্যাপ|এআই/i],
+['Health',/health|hospital|dengue|covid|disease|doctor|medical|vaccine|cancer|স্বাস্থ্য|হাসপাতাল|ডেঙ্গু|চিকিৎসক|ডাক্তার|রোগ|টিকা/i],
+['International',/\bus\b|\busa\b|\buk\b|\beu\b|japan|europe|britain|saudi|qatar|nepal|sri lanka|afghan|taliban|korea|turkey|canada|australia|nato|putin|netanyahu|middle east|জাপান|ইউরোপ|ব্রিটেন|যুক্তরাজ্য|সৌদি|কাতার|নেপাল|শ্রীলঙ্কা|আফগান|তুরস্ক|কানাডা|অস্ট্রেলিয়া|পুতিন|নেতানিয়াহু|মধ্যপ্রাচ্য|জাতিসংঘ|india|china|russia|ukraine|gaza|israel|iran|pakistan|myanmar|rohingya|\bun\b|trump|modi|global|international|যুক্তরাষ্ট্র|ভারত|চীন|রাশিয়া|ইউক্রেন|গাজা|ইসরায়েল|ইরান|পাকিস্তান|মিয়ানমার|রোহিঙ্গা|বিশ্ব|আন্তর্জাতিক|ট্রাম্প|মোদি/i],
+['Politics',/election|\bparty\b|\bbnp\b|awami|jamaat|\bncp\b|parliament|minister|government|adviser|political|\bvote|polls|rally|protest|reform|commission|রাজনীত|নির্বাচন|বিএনপি|আওয়ামী|জামায়াত|সংসদ|মন্ত্রী|সরকার|উপদেষ্টা|ভোট|সমাবেশ|সংস্কার|আন্দোলন/i],
+['Economy',/economy|\bgdp\b|inflation|budget|\bimf\b|world bank|bangladesh bank|\btaka\b|remittance|export|import|\btax|\bnbr\b|reserve|দাম|মূল্যস্ফীতি|অর্থনীতি|বাজেট|রেমিট্যান্স|রপ্তানি|আমদানি|রিজার্ভ|ডলার|ঋণ|এনবিআর|ব্যাংক/i],
+['Business',/business|stock|\bdse\b|market|company|shares|investment|profit|trade|industry|garment|\brmg\b|factory|ব্যবসা|শেয়ার|পুঁজিবাজার|কোম্পানি|বিনিয়োগ|শিল্প|পোশাক/i],
+['National',/dhaka|chattogram|police|court|crime|accident|killed|arrest|flood|\broad|\bfire\b|ঢাকা|চট্টগ্রাম|পুলিশ|আদালত|গ্রেপ্তার|নিহত|দুর্ঘটনা|বন্যা|সড়ক|আগুন|হত্যা/i]];
+const BDX=/bangladesh|dhaka|chattogram|khulna|rajshahi|sylhet|barishal|rangpur|\btaka\b|\bbnp\b|awami|jamaat|\bncp\b|upazila|\bbgb\b|\bbcb\b|বাংলাদেশ|ঢাকা|চট্টগ্রাম|খুলনা|রাজশাহী|সিলেট|বরিশাল|রংপুর|টাকা|বিএনপি|আওয়ামী|জামায়াত|এনসিপি|উপজেলা|জেলা|বিজিবি|বিসিবি|দেশের/i;
+const cl=h=>{const f=CT.find(c=>(c[0]!='International'||!BDX.test(h))&&c[1].test(h));return f?f[0]:'Other'};
+const SP=new Set('the and for with from after over into says said amid its his her their this that how why what who are was were has have had will not but you your এবং করে থেকে জন্য হয়েছে নিয়ে হবে করেছেন বলেছেন'.split(' '));
+const BX={'ঢাকা':'dhaka','চট্টগ্রাম':'chattogram','বিএনপি':'bnp','আওয়ামী':'awami','জামায়াত':'jamaat','এনসিপি':'ncp','ভারত':'india','চীন':'china','যুক্তরাষ্ট্র':'usa','ট্রাম্প':'trump','মোদি':'modi','ইউনূস':'yunus','হাসিনা':'hasina','তারেক':'tarique','খালেদা':'khaleda','ডেঙ্গু':'dengue','রিজার্ভ':'reserve','ডলার':'dollar','বাজেট':'budget','ক্রিকেট':'cricket','বিপিএল':'bpl','নির্বাচন':'election','সংসদ':'parliament','মন্ত্রী':'minister','উপদেষ্টা':'adviser','রোহিঙ্গা':'rohingya','মিয়ানমার':'myanmar','গাজা':'gaza','ইসরায়েল':'israel','ইরান':'iran','পাকিস্তান':'pakistan','ইউক্রেন':'ukraine','রাশিয়া':'russia','পুলিশ':'police','আদালত':'court','বন্যা':'flood','ভূমিকম্প':'earthquake','এসএসসি':'ssc','এইচএসসি':'hsc','এনবিআর':'nbr','রপ্তানি':'export','রেমিট্যান্স':'remittance','পদত্যাগ':'resign','গ্রেপ্তার':'arrest','শেয়ারবাজার':'stock','বিমানবন্দর':'airport','সমাবেশ':'rally','হরতাল':'hartal'};
+const bx=w=>BX[w]||BX[w.replace(/(ের|েরা|য়|য\u09BC|র|কে|ে|ও|ই)$/,'')]||w;
+const tok=h=>new Set((h.toLowerCase().replace(/[০-৯]/g,d=>'০১২৩৪৫৬৭৮৯'.indexOf(d)).match(/[\p{L}\p{M}\p{N}]+/gu)||[]).filter(w=>w.length>2&&!SP.has(w)).map(bx));
+const sim=(a,b)=>{let n=0;for(const w of a)if(b.has(w))n++;const m=Math.min(a.size,b.size);return n>=2&&(n>=3||m<=4)&&n/m>=.6&&n/(a.size+b.size-n)>=.4};
+const hu=o=>RSS[o[0]]||'https://news.google.com/rss/search?q='+encodeURIComponent('site:'+o[1]+' when:2d')+'&'+(o[3]=='en'?'hl=en-BD&gl=BD&ceid=BD:en':'hl=bn&gl=BD&ceid=BD:bn');
+/* outlet scanner: shows Google News results at once, then looks for each outlet's own RSS feed in the background */
+const FP=['/feed','/rss.xml','/rss','/feed/','/rss/rss.xml','/index.xml'],FD=L.g('fd',{}),RT={},LF={},DI=new Set(),DQ=[];let DR=0;
+async function fd(u){const r=await get(u,true);if(!r)return null;return r.t?parseX(r.t).map(x=>({...x,dr:1})):[]}
+async function disc(o){let ok=0;const base='https://'+o[1],c=[],h=await get(base+'/',true);
+ if(!h){RT[o[0]]=Date.now()+6e5;return null}
+ {ok++;if(h.t){try{new DOMParser().parseFromString(h.t,'text/html').querySelectorAll('link[rel~=alternate]').forEach(l=>{if(/rss|atom|xml/i.test(l.type||'')){try{c.push(new URL(l.getAttribute('href'),base+'/').href)}catch(e){}}})}catch(e){}}}
+ for(const p of FP)c.push(base+p);
+ let tr=0;
+ for(const u of[...new Set(c)].slice(0,8)){let r=await fd(u);if(r===null)r=await fd(u);tr++;if(r!==null){ok++;if(r.length>2){FD[o[0]]={u,t:Date.now()};L.s('fd',FD);return r}}}
+ if((ok-1)*2<tr){RT[o[0]]=Date.now()+6e5;return null}
+ FD[o[0]]={u:'',t:Date.now()};L.s('fd',FD);return null}
+function mh(o,r){const m=new Map(HUB.map(x=>[x.id,x]));r.forEach(x=>{const p=hp(x,o);if(!m.has(p.id)){if(HU)p.fr=Date.now();m.set(p.id,p)}});HUB=[...m.values()]}
+function qdisc(o){if(DI.has(o[0]))return;DI.add(o[0]);DQ.push(o);pump()}
+function pump(){while(DR<2&&DQ.length){const o=DQ.shift();DR++;
+ disc(o).then(r=>{if(r){OS[o[0]]={m:'direct',n:r.length,t:Date.now()};mh(o,r);hf();dmerge()}}).catch(()=>{}).finally(()=>{DR--;DI.delete(o[0]);pump()})}}
+const ost=(n,m,r,w)=>{OS[n]={m,n:r.length,t:Date.now(),w:w||''};return r};
+async function ofetch(o){const n=o[0],c=FD[n];let r,dw='';
+ if(RSS[n]){r=await fd(RSS[n]);if(r&&r.length)return ost(n,'direct',r)}
+ if(c&&c.u){r=await fd(c.u);if(r&&r.length)return ost(n,'direct',r);dw=r?'own feed was empty':'own feed timed out'}
+ if((!c||c.u||Date.now()-c.t>216e5)&&Date.now()>(RT[n]||0)){RT[n]=Date.now()+3e5;qdisc(o)}
+ if(c&&!c.u&&Date.now()-(LF[n]||0)<6e5)return[];
+ LF[n]=Date.now();const q=await get(hu(o)),it=q?(q.items||(q.t?parseX(q.t):[])):[];return ost(n,'google',it,it.length?dw:(q?'Google returned nothing':'all routes failed')+(dw?'; '+dw:''))}
+const icap=a=>{let w=0;return a.filter(x=>!(x.c.size==1&&x.c.has('world'))||++w<=INTL)};
+function dmerge(){const m=new Map(items.map(x=>[x.id,x]));
+ HUB.filter(x=>HEN.has(x.o)&&Date.now()-x.d<864e5).forEach(x=>{const k=hs(x.h),w=x.cat=='International',e=m.get(k);
+  if(e){e.c.add(w?'world':MAPC[x.cat]||'top');if(!w)e.c.add('top')}
+  else{m.set(k,{id:k,h:x.h,s:x.o,l:x.l,d:x.d,c:new Set(w?['world']:['top',MAPC[x.cat]||'top'])});if(x.fr&&items.length)fresh.add(k)}});
+ items=icap([...m.values()].sort((a,b)=>b.d-a.d));ren();
+ if(items.length&&/^Could not/.test($('#st').textContent))$('#st').textContent='Updated '+new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Dhaka'})+' with '+items.length+' headlines'}
+const smm=x=>{if(!x.s||x.s.includes('news.google.com'))return'';const t=new DOMParser().parseFromString(x.s,'text/html').body.textContent.replace(/\s+/g,' ').trim();return t.length>40?t.slice(0,240):''};
+function hp(x,o){const g=!x.dr&&!RSS[o[0]],m=x.t.lastIndexOf(' - '),h=(g&&m>0?x.t.slice(0,m):x.t).trim();
+ return{id:hs(h+'|'+o[0]),h,o:o[0],ty:o[2],l:/^https?:/.test(x.l)?x.l:'#',d:isNaN(x.d)?new Date():x.d,sm:smm(x),cat:cl(h),tk:tok(h)}}
+const hqp=s=>{const p=(s.toLowerCase().match(/-?"[^"]+"|\S+/g)||[]).map(w=>[w[0]=='-',w.replace(/^-/,'').replace(/"/g,'')]).filter(w=>w[1]),
+ f=(x,w)=>(x.h+' '+x.sm+' '+x.o).toLowerCase().includes(w);
+ return{ok:x=>p.every(([n,w])=>f(x,w)!=n),n:x=>p.filter(([n,w])=>!n&&f(x,w)).length}};
+let HUB=[],HEN=new Set(L.g('hen',OUT.map(o=>o[0]))),hc='all',ho='all',XO=new Set(),HSH=60,HT=0,HB=0,HU='',HSM=true,ht,ht2,
+ SV=L.g('sv',{}),COLS=L.g('cols',['Research']),CC=COLS[0];
+async function hload(){
+ if(HB)return;HB=1;PF=0;HT=Date.now();HUB=HUB.filter(x=>HEN.has(x.o));hf();
+ const on=OUT.filter(o=>HEN.has(o[0]));
+ for(let i=0;i<on.length;i+=4){
+  await Promise.all(on.slice(i,i+4).map(async o=>{try{mh(o,await ofetch(o))}catch(e){}}));
+  hf();
+ }
+ if(!HUB.length)await gdelt();
+ HB=0;HU=new Date().toLocaleTimeString('en-GB',{timeZone:'Asia/Dhaka'});hf();dmerge();
+}
+const hb2=(a,v,t,n,on)=>`<button class="${on?'on':''}" data-a="${a}" data-v="${esc(v)}"><span>${esc(t)}</span><small>${n}</small></button>`;
+const hrow=(x,sub,c,fi)=>`<div class="hw${sub?' sub':''}"><span class="tm" title="${x.d.toLocaleString('en-GB',{timeZone:'Asia/Dhaka'})}">${ago(x.d)}</span><div class="hb">${x.fr&&Date.now()-x.fr<6e5?'<span class="nw">NEW</span>':''}<a href="${esc(x.l)}" target="_blank" rel="noopener">${esc(x.h)}</a><div class="mt"><b class="ob t-${x.ty}">${esc(x.o)}</b><span class="ct">${x.cat}</span>${fi?'<span class="cv">First reported</span>':''}${c?`<button class="b" data-a="xp" data-i="${x.id}">${XO.has(x.id)?'Hide':'Compare'} ${c.ou.size} outlets</button><span class="cv">${[...c.ou].slice(0,3).map(esc).join(', ')}${c.ou.size>3?' +'+(c.ou.size-3):''}</span>`:''}</div>${HSM&&x.sm&&!sub?`<p class="sm">${esc(x.sm)}</p>`:''}</div><div class="ac"><button class="b" data-a="hs" data-i="${x.id}" title="Save headline" aria-label="Save headline">${SV[x.id]?'★':'☆'}</button>${sub?'':`<button class="b p" data-a="hb" data-i="${x.id}">Byte it</button>`}</div></div>`;
+function hf(){
+ const HIN=new Set(HUB.filter(x=>x.cat=='International').sort((a,b)=>b.d-a.d).slice(0,HINTL).map(x=>x.id)),now=Date.now(),R=+$('#hrng').value,ty=$('#hty').value,tq=hqp($('#hq').value),
+ base=HUB.filter(x=>(x.cat!='International'||HIN.has(x.id))&&(!R||now-x.d<R*36e5)&&(ty=='all'||x.ty==ty)&&tq.ok(x)),cc={},oc={};
+ base.forEach(x=>{cc[x.cat]=(cc[x.cat]||0)+1;oc[x.o]=(oc[x.o]||0)+1});
+ const l=base.filter(x=>(hc=='all'||x.cat==hc)&&(ho=='all'||x.o==ho)).sort((a,b)=>b.d-a.d),cs=[];
+ l.forEach(x=>{const k=$('#hgr').checked&&cs.find(k=>sim(x.tk,k.it[0].tk));k?k.it.push(x):cs.push({id:x.id,it:[x]})});
+ cs.forEach(c=>{c.ou=new Set(c.it.map(x=>x.o));c.sc=c.ou.size*3+Math.max(0,5-(now-c.it[0].d)/18e6)+c.it.reduce((a,x)=>a+tq.n(x),0)*2});
+ const so=$('#hsort').value;cs.sort(so=='new'?(a,b)=>b.it[0].d-a.it[0].d:so=='cov'?(a,b)=>b.ou.size-a.ou.size||b.it[0].d-a.it[0].d:(a,b)=>b.sc-a.sc);
+ $('#hcat').innerHTML=hb2('hc','all','All categories',base.length,hc=='all')+CN.map(k=>hb2('hc',k,k,cc[k]||0,hc==k)).join('');
+ $('#hout').innerHTML='<div class="fl2" style="margin-bottom:2px">'+hb2('ho','all','All outlets',base.length,ho=='all')+'</div>'+OUT.map(o=>`<div class="oe"><input type="checkbox" data-a="oe" data-v="${esc(o[0])}" ${HEN.has(o[0])?'checked':''} aria-label="Fetch ${esc(o[0])}"><div class="fl2">${hb2('ho',o[0],o[0],HEN.has(o[0])?(oc[o[0]]||0):'off',ho==o[0])}</div></div>`).join('');
+ const w=Object.create(null);HUB.filter(x=>now-x.d<216e5&&(x.cat!='International'||HIN.has(x.id))).forEach(x=>x.tk.forEach(t=>{if(t.length>3&&!SP.has(t))(w[t]=w[t]||new Set()).add(x.o)}));
+ $('#hem').innerHTML='<span class="st">Emerging in the last 6 hours:</span> '+(Object.entries(w).filter(e=>e[1].size>=3).sort((a,b)=>b[1].size-a[1].size).slice(0,10).map(([t,s])=>ch('hw',t,t+' '+s.size,0)).join('')||'<span class="st">nothing shared by 3 or more outlets yet</span>');
+ $('#hst').textContent=(HB?'Syncing... ':'')+base.length+' headlines, '+cs.length+' stories, '+new Set(base.map(x=>x.o)).size+' outlets reporting'+(HU?'. Updated '+HU+'. '+Object.values(FD).filter(c=>c.u).length+' outlets scanned directly':'')+(!HB&&HU&&!base.length?'. Nothing loaded yet. The free routes may be blocked on your network. Open Check sources and add your own proxy.':'');
+ $('#hfl').innerHTML=cs.slice(0,HSH).map(c=>{const x=c.it[0],g=c.ou.size>1;
+  return hrow(x,0,g?c:0)+(g&&XO.has(x.id)?c.it.slice().sort((a,b)=>a.d-b.d).map((y,i)=>hrow(y,1,0,!i)).join(''):'')}).join('')||`<p class="st" style="padding:16px 0">${HB?'Loading headlines...':HUB.length?'No headlines match these filters.':'Could not reach the feed proxy. Press Refresh to try again.'}</p>`;
+ $('#hmore').hidden=cs.length<=HSH;
+}
+function hsv(){
+ const v=Object.values(SV).sort((a,b)=>b.at-a.at);
+ $('#sn').textContent=v.length;
+ $('#hcol').innerHTML=COLS.map(c=>`<option${c==CC?' selected':''}>${esc(c)}</option>`).join('');
+ $('#savl').innerHTML=COLS.map((c,ci)=>{const l=v.filter(x=>x.col==c);
+  return`<div class="card"><div class="fh"><h2>${esc(c)} <span class="st">${l.length}</span></h2><div class="tg"><button class="b" data-a="cc2" data-v="${ci}">Copy list</button>${ci?`<button class="b" data-a="dc" data-v="${ci}">Delete collection</button>`:''}</div></div>${l.map(x=>`<div class="hw"><span class="tm">${ago(x.d)}</span><div class="hb"><a href="${esc(x.l)}" target="_blank" rel="noopener">${esc(x.h)}</a><div class="mt"><b class="ob">${esc(x.o)}</b><span class="ct">${x.cat}</span></div><input class="nt" data-i="${x.id}" value="${esc(x.note)}" placeholder="Add a note" aria-label="Note"></div><div class="ac"><select class="ms" data-i="${x.id}" aria-label="Collection">${COLS.map(k=>`<option${k==x.col?' selected':''}>${esc(k)}</option>`).join('')}</select><button class="b p" data-a="hb" data-i="${x.id}">Byte it</button><button class="b" data-a="hs" data-i="${x.id}">Remove</button></div></div>`).join('')||'<p class="st">Nothing here yet. Star a headline in the Headlines Hub.</p>'}</div>`}).join('');
+}
+function go(v){L.s('view',v);['dash','hub','sav'].forEach(k=>{$('#v-'+k).hidden=k!=v;$('[data-n='+k+']').classList.toggle('on',k==v)});
+ if(v=='hub'&&(!HUB.length||Date.now()-HT>6e5))hload();if(v=='sav')hsv()}
+document.addEventListener('click',e=>{
+ const t=e.target.closest('[data-a]');if(!t)return;const a=t.dataset.a,i=t.dataset.i,v=t.dataset.v,x=i&&(HUB.find(y=>y.id==i)||SV[i]);
+ if(a=='go')go(v);else if(a=='hc'){hc=v;hf()}else if(a=='ho'){ho=v;hf()}
+ else if(a=='hw'){$('#hq').value=v;hf()}
+ else if(a=='xp'){XO.has(i)?XO.delete(i):XO.add(i);hf()}
+ else if(a=='hs'){if(SV[i])delete SV[i];else SV[i]={id:x.id,h:x.h,o:x.o,l:x.l,d:+x.d,cat:x.cat,col:CC,note:'',at:Date.now()};L.s('sv',SV);hf();hsv()}
+ else if(a=='hb'){B[i]?edit(B[i]):edit({id:x.id,o:x.h,s:x.o,l:x.l,c:MAPC[x.cat]||'top'})}
+ else if(a=='oe'){HEN.has(v)?HEN.delete(v):HEN.add(v);L.s('hen',[...HEN]);clearTimeout(ht);ht=setTimeout(hload,700);hf()}
+ else if(a=='hm'){HSH+=60;hf()}else if(a=='rh')hload();
+ else if(a=='ac'){const n=$('#nc').value.trim();if(n&&!COLS.includes(n)){COLS.push(n);L.s('cols',COLS);$('#nc').value='';hsv()}}
+ else if(a=='dc'){const c=COLS[+v];Object.values(SV).forEach(s=>{if(s.col==c)s.col=COLS[0]});COLS.splice(+v,1);L.s('cols',COLS);L.s('sv',SV);if(!COLS.includes(CC))CC=COLS[0];hsv()}
+ else if(a=='cc2'){const c=COLS[+v];cp(c+'\n\n'+Object.values(SV).filter(s=>s.col==c).map(s=>`- ${s.h} (${s.o}, ${new Date(s.d).toLocaleDateString('en-GB')})\n  ${s.l}${s.note?'\n  Note: '+s.note:''}`).join('\n'));t.textContent='Copied';setTimeout(()=>t.textContent='Copy list',1500)}
+});
+document.addEventListener('change',e=>{const t=e.target,i=t.dataset&&t.dataset.i;
+ if(t.matches('.nt')){SV[i].note=t.value;L.s('sv',SV)}
+ else if(t.matches('.ms')){SV[i].col=t.value;L.s('sv',SV);hsv()}
+ else if(t.id=='hcol')CC=t.value;
+ else if(['hsort','hrng','hty','hgr','hsm'].includes(t.id)){if(t.id=='hsm')HSM=t.checked;hf()}});
+$('#hq').addEventListener('input',()=>{clearTimeout(ht2);ht2=setTimeout(hf,150)});
+let HLT;function hloop(){clearTimeout(HLT);HLT=setTimeout(async()=>{if(!document.hidden)await hload();hloop()},PF>6?3e5:12e4)}hloop();
+setInterval(()=>{if(!$('#v-hub').hidden)hf()},6e4);
+rb();rk();load();wx();fr();setInterval(wx,6e5);setInterval(fr,36e5);
+const ag=t=>{const x=Math.round((Date.now()-t)/1e3);return x<90?x+'s ago':Math.round(x/60)+' min ago'};
+function dgr(){const T='style="padding:4px 8px;border-bottom:1px solid var(--ln);text-align:left;font-size:13px"',
+ rt=[...MT,{n:'gdelt (no proxy)',k:'gdelt'}].map(m=>{const h=MH[m.k||m.n]||{ok:0,bad:0,f:0,d:0},st=h.d>Date.now()?'paused':(h.ok||h.bad)?(h.f?'failing':'working'):'not used yet';
+  return`<tr><td ${T}>${m.n}</td><td ${T}>${st}</td><td ${T}>${h.ok} ok, ${h.bad} failed</td><td ${T}>${esc(RTR[m.k||m.n]||h.err||'')}</td></tr>`}).join(''),
+ ot=OUT.map(o=>{const n=o[0],x=OS[n],c=FD[n],md=x?(x.m=='direct'?'own feed':x.m=='gdelt'?'GDELT index':'Google News'):(DI.has(n)?'looking for feed':'waiting');
+  return`<tr><td ${T}>${esc(n)}</td><td ${T}>${md}</td><td ${T}>${x?x.n+' items, '+ag(x.t)+(x.w?' ('+esc(x.w)+')':''):'-'}</td><td ${T}>${c&&c.u?esc(c.u):c?'no feed found':''}</td></tr>`}).join('');
+ $('#dgc').innerHTML=`<table style="width:100%;border-collapse:collapse"><tr><th ${T}>Route</th><th ${T}>State</th><th ${T}>Requests</th><th ${T}>Last result</th></tr>${rt}</table><table style="width:100%;border-collapse:collapse;margin-top:14px"><tr><th ${T}>Outlet</th><th ${T}>Reading from</th><th ${T}>Headlines</th><th ${T}>Own feed</th></tr>${ot}</table>`}
+async function rtest(){for(const m of MT){RTR[m.n]='testing...';dgr();const t0=performance.now();try{const r=await pull(m,TU);RTR[m.n]='works: '+(r.items?r.items.length:parseX(r.t||'').length)+' items in '+Math.round(performance.now()-t0)+' ms'}catch(e){RTR[m.n]='failed: '+String(e.message||e).slice(0,40)}dgr()}
+ RTR.gdelt='testing...';dgr();const t1=performance.now();
+ try{const r=await fetch('https://api.gdeltproject.org/api/v2/doc/doc?query='+encodeURIComponent('(domain:thedailystar.net OR domain:prothomalo.com)')+'&mode=artlist&maxrecords=10&format=json&timespan=1d',{signal:AbortSignal.timeout?AbortSignal.timeout(15e3):undefined});if(!r.ok)throw new Error('HTTP '+r.status);const j=await r.json();RTR.gdelt='works: '+(j.articles||[]).length+' articles in '+Math.round(performance.now()-t1)+' ms'}catch(e){RTR.gdelt='failed: '+String(e.message||e).slice(0,40)}dgr()}
+$('#dgb').onclick=()=>{dgr();$('#wki').value=WK;$('#dg').classList.add('on')};
+document.addEventListener('click',e=>{const a=e.target.dataset&&e.target.dataset.k;
+ if(a=='dx')$('#dg').classList.remove('on');else if(a=='dt')rtest();
+ else if(a=='ws'){WK=wkn($('#wki').value);L.s('wk',WK);$('#wki').value=WK;mtb();[FD,RT,LF,MH].forEach(o=>Object.keys(o).forEach(k=>delete o[k]));L.s('fd',FD);hload();load();dgr()}
+ else if(a=='dr'){[FD,RT,LF,MH].forEach(o=>Object.keys(o).forEach(k=>delete o[k]));L.s('fd',FD);hload();dgr()}});
+setInterval(()=>{if($('#dg').classList.contains('on'))dgr()},2e3);
+const BK=['bd','sv','cols','tg','hen','wk'];
+$('#sw').hidden=SOK;
+$('#bkb').onclick=()=>{$('#bt').value=JSON.stringify(Object.fromEntries(BK.map(k=>[k,L.g(k,null)]).filter(e=>e[1]!=null)));$('#bk').classList.add('on')};
+document.addEventListener('click',e=>{const a=e.target.dataset&&e.target.dataset.k;if(!a)return;
+ if(a=='x')$('#bk').classList.remove('on');
+ else if(a=='c'){cp($('#bt').value);e.target.textContent='Copied';setTimeout(()=>e.target.textContent='Copy',1500)}
+ else if(a=='r'){try{const o=JSON.parse($('#bt').value);BK.forEach(k=>{if(o[k]!=null)L.s(k,o[k])});B=L.g('bd',{});SV=L.g('sv',{});COLS=L.g('cols',['Research']);CC=COLS[0];HEN=new Set(L.g('hen',OUT.map(o=>o[0])));WK=L.g('wk','')||'';mtb();rb();rk();hsv();hf();$('#bk').classList.remove('on')}catch(x){e.target.textContent='Not valid backup text'}}});
+hload();hsv();go(L.g('view','dash'));
+</script></body></html>
