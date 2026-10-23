@@ -77,12 +77,23 @@ input:focus,textarea:focus,select:focus,button:focus-visible,a:focus-visible{out
 .ac{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.ac select{width:auto}
 .nt{margin-top:6px;font-size:13px;padding:4px 8px}
 @media(max-width:900px){.hubg{grid-template-columns:1fr}.side{position:static;max-height:none}.hw{flex-wrap:wrap}}
-</style></head><body>
+[hidden]{display:none!important}
+body.lock>*:not(#lgn){display:none!important}
+.lgn{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:var(--bg);padding:20px;overflow:auto}
+.lgb{width:100%;max-width:380px;margin:0}.lgb h1{font-size:22px;margin:0 0 4px}.lgb label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px}
+.lgb .lpw{display:flex;gap:8px}.lgb .lk{display:flex;gap:8px;align-items:center;font-weight:400;margin-top:12px}.lgb .lk input{width:auto}.lgb .b.p{width:100%;margin-top:14px;padding:9px 10px;font-size:14px}
+</style></head><body class="lock">
+<div id="lgn" class="lgn"><div class="card lgb"><h1>THE DAILY <em>STANDARD</em></h1><p class="st">Sign in to the newsroom desk</p>
+<label for="lu">Username</label><input id="lu" autocomplete="username" autocapitalize="off" spellcheck="false">
+<label for="lp">Password</label><div class="lpw"><input id="lp" type="password" autocomplete="current-password"><button class="b" id="lsp" type="button">Show</button></div>
+<label class="lk"><input type="checkbox" id="lkp" checked> Keep me signed in on this device</label>
+<p class="st" id="lm" role="alert" aria-live="polite" style="margin-top:10px;color:var(--ac);min-height:1.4em"></p>
+<button class="b p" id="lgo" type="button">Sign in</button></div></div>
 <header class="top"><div class="wrap hd">
 <div class="brand"><h1>THE DAILY <em>STANDARD</em></h1><small>Newsroom desk: byte-size news for Bangladesh</small></div>
 <div class="hr"><div class="clk"><b id="clk">--:--:--</b><small id="dt"></small></div>
-<button class="btn" id="rf" title="Refresh now">Refresh in <span id="cd">5:00</span></button>
-<button class="btn" id="lg" title="Switch feed language">EN / বাংলা</button><button class="btn" id="dgb" title="See which news routes and outlets are working">Check sources</button><button class="btn" id="bkb" title="Save or restore your pipeline and saved headlines">Backup</button><button class="btn" id="th">Theme</button></div></div>
+<button class="btn" id="rf" title="Refresh now"><span id="cd">Refresh in 5:00</span></button>
+<button class="btn" id="lg" title="Switch feed language">EN / বাংলা</button><button class="btn" id="dgb" title="See which news routes and outlets are working">Check sources</button><button class="btn" id="bkb" title="Save or restore your pipeline and saved headlines">Backup</button><button class="btn" id="th">Theme</button><span id="who" class="st" style="color:#fff;opacity:.85"></span><button class="btn" id="mlb" hidden>Logins</button><button class="btn" id="lo" hidden>Sign out</button></div></div>
 <nav class="nav wrap" aria-label="Main"><button data-n="dash" data-a="go" data-v="dash" class="on">Dashboard</button><button data-n="hub" data-a="go" data-v="hub">Headlines Hub</button><button data-n="sav" data-a="go" data-v="sav">Saved<span id="sn">0</span></button></nav>
 <div class="tick"><span class="live">LIVE</span><div class="tr"><div id="tk"></div></div></div></header>
 <main class="wrap"><div class="card" id="sw" hidden style="margin-top:18px;border-color:var(--ac)"><p class="st">Your browser blocks storage inside this embed, so the pipeline and saved headlines last only until you close the page. Use Backup to save them, or host this file at its own address and link to it from your site.</p></div>
@@ -125,6 +136,7 @@ input:focus,textarea:focus,select:focus,button:focus-visible,a:focus-visible{out
 <div id="v-sav" hidden><div class="card" style="margin-top:18px"><div class="fh"><h2>Saved headlines</h2><div class="tg"><input id="nc" placeholder="New collection name" style="width:220px" aria-label="New collection name"><button class="b p" data-a="ac">Add collection</button></div></div><p class="st">Group headlines into collections for research, reporting or analysis. Notes save as you type.</p></div><div id="savl"></div></div>
 </main>
 <p class="ft">Headlines come only from Bangladeshi newspapers, portals and TV channels, fetched through Google News and a free RSS proxy. International stories are limited to a few. Rewrite every story in your own words and credit the original outlet. Your pipeline is saved in this browser only.</p>
+<div class="mo" id="ml"><div class="md" style="max-width:560px"><div class="fh"><h2>Manage logins</h2><button class="b" data-k="mx">Close</button></div><p class="st">Logins you add here are saved in this browser and included in Backup. To make a login permanent for everyone, copy its line into the USERS list in the file.</p><div id="mlc"></div><h3 style="margin-top:14px">Add or change a login</h3><p class="st">Using an existing username changes that login's password and role.</p><div class="tg" style="margin-top:8px;flex-wrap:wrap"><input id="nu" placeholder="Username" style="flex:1;min-width:130px" autocomplete="off"><input id="np" placeholder="Password (8+ characters)" style="flex:1;min-width:160px" autocomplete="off"><select id="nr" style="width:auto"><option value="user">User</option><option value="admin">Admin</option></select><button class="b p" data-k="ma">Save login</button></div><p class="st" id="mm" role="alert" style="margin-top:8px"></p><textarea id="mcode" readonly rows="3" hidden aria-label="Line to paste into the file"></textarea></div></div>
 <div class="mo" id="dg"><div class="md" style="max-width:760px"><div class="fh"><h2>Source check</h2><button class="b" data-k="dx">Close</button></div><p class="st">Shows which fetch route and which outlet is working. Press Test routes first. If every route fails, your network or the free services are blocking the requests.</p><div style="margin:12px 0"><label for="wki" style="font-size:13px;font-weight:600">Your own proxy address (recommended when the free routes fail)</label><div class="tg" style="margin-top:6px"><input id="wki" placeholder="https://your-name.workers.dev/?url=" style="flex:1;min-width:220px"><button class="b p" data-k="ws">Save</button></div><p class="st" style="margin-top:6px">Free and takes about 5 minutes: create a Cloudflare Worker, paste the worker.js file into it, deploy, then paste its address here.</p></div><div id="dgc" style="overflow:auto"></div><div class="tg" style="margin-top:12px"><button class="b p" data-k="dt">Test routes</button><button class="b" data-k="dr">Re-scan everything</button></div></div></div>
 <div class="mo" id="bk"><div class="md"><div class="fh"><h2>Backup</h2><button class="b" data-k="x">Close</button></div><p class="st">Copy this text and keep it somewhere safe. To restore, paste a saved backup here and press Restore. It holds your story pipeline, saved headlines, collections and outlet choices.</p><textarea id="bt" rows="8" style="margin-top:10px" aria-label="Backup text"></textarea><div class="tg" style="margin-top:12px"><button class="b p" data-k="c">Copy</button><button class="b" data-k="r">Restore</button></div></div></div>
 <div class="mo" id="mo"><div class="md">
@@ -200,7 +212,13 @@ async function gdelt(){let n=0;const h=MH.gdelt=MH.gdelt||{ok:0,bad:0,f:0,d:0,er
   if(i+8<ds.length)await new Promise(r=>setTimeout(r,5200))}
  return n}
 function pr(o){const m=o.t.lastIndexOf(' - '),h=m>0?o.t.slice(0,m):o.t;return{id:hs(h),h,s:m>0?o.t.slice(m+3):'Unknown',l:/^https?:/.test(o.l)?o.l:'#',d:isNaN(o.d)?new Date():o.d}}
-async function load(){
+let LB=0;
+const cdr=()=>{$('#cd').textContent=LB?'Refreshing...':'Refresh in '+((nx/60)|0)+':'+String(nx%60).padStart(2,'0')};
+async function load(){ /* one refresh at a time; the countdown restarts at 5:00 when it starts and again when it ends */
+ if(LB)return;LB=1;nx=300;cdr();
+ try{await load0()}catch(e){$('#st').textContent='Refresh failed. Try again.'}
+ finally{LB=0;nx=300;cdr()}}
+async function load0(){
  $('#st').textContent='Syncing...';
  const ks=Object.keys(CATS),rs=await Promise.all(ks.map(k=>fq(k))),m=new Map();
  rs.forEach((r,i)=>r.forEach(o=>{const p=pr(o),e=m.get(p.id);e?e.c.add(ks[i]):m.set(p.id,{...p,c:new Set([ks[i]])})}));
@@ -266,7 +284,7 @@ $('#es').innerHTML=STG.map(s=>`<option value="${s}">${s[0].toUpperCase()+s.slice
 $('#q').addEventListener('input',e=>{q=e.target.value;rf()});
 $('#q').addEventListener('keydown',async e=>{if(e.key=='Enter'&&q.trim()){$('#st').textContent='Searching the wire...';SR=(await fq(null,q.trim(),'7d')).map(pr);cat='search';src='all';q='';$('#q').value='';rf();$('#st').textContent=SR.length+' results'}});
 $('#tg').addEventListener('change',e=>{L.s('tg',Math.max(1,+e.target.value||20));rk()});
-$('#rf').onclick=()=>{load();hload()};
+$('#rf').onclick=()=>{if(!AUTH)return;nx=300;load();hload();hloop()};
 $('#lg').onclick=()=>{LG=LG=='en'?'bn':'en';L.s('lg',LG);items=[];SR=[];cat='top';fresh.clear();load()};
 $('#th').onclick=()=>{const n=document.documentElement.dataset.t=='dark'?'light':'dark';document.documentElement.dataset.t=n;L.s('th',n)};
 document.addEventListener('visibilitychange',()=>{if(!document.hidden){fresh.clear();ren();if(Date.now()-HT>6e4)hload()}});
@@ -274,7 +292,7 @@ document.addEventListener('visibilitychange',()=>{if(!document.hidden){fresh.cle
 setInterval(()=>{const n=new Date(),z={timeZone:'Asia/Dhaka'};
  $('#clk').textContent=n.toLocaleTimeString('en-GB',z);
  $('#dt').textContent=n.toLocaleDateString('en-GB',{...z,weekday:'long',day:'numeric',month:'long',year:'numeric'})+', Dhaka';
- nx--;$('#cd').textContent=((nx/60)|0)+':'+String(nx%60).padStart(2,'0');if(nx<=0)load();
+ nx=Math.max(0,nx-1);cdr();if(nx<=0&&!LB&&AUTH)load();
  if(nx%60==0)rf();},1e3);
 /* side widgets */
 const wl=c=>c==0?'Clear sky':c<4?'Partly cloudy':c<50?'Fog':c<70?'Rain':c<80?'Snow':c<95?'Showers':'Thunderstorm';
@@ -403,9 +421,9 @@ document.addEventListener('change',e=>{const t=e.target,i=t.dataset&&t.dataset.i
  else if(t.id=='hcol')CC=t.value;
  else if(['hsort','hrng','hty','hgr','hsm'].includes(t.id)){if(t.id=='hsm')HSM=t.checked;hf()}});
 $('#hq').addEventListener('input',()=>{clearTimeout(ht2);ht2=setTimeout(hf,150)});
-let HLT;function hloop(){clearTimeout(HLT);HLT=setTimeout(async()=>{if(!document.hidden)await hload();hloop()},PF>6?3e5:12e4)}hloop();
+let HLT;function hloop(){clearTimeout(HLT);HLT=setTimeout(async()=>{if(!document.hidden&&AUTH)await hload();hloop()},PF>6?3e5:12e4)}hloop();
 setInterval(()=>{if(!$('#v-hub').hidden)hf()},6e4);
-rb();rk();load();wx();fr();setInterval(wx,6e5);setInterval(fr,36e5);
+function boot1(){rb();rk();load();wx();fr();setInterval(wx,6e5);setInterval(fr,36e5)}
 const ag=t=>{const x=Math.round((Date.now()-t)/1e3);return x<90?x+'s ago':Math.round(x/60)+' min ago'};
 function dgr(){const T='style="padding:4px 8px;border-bottom:1px solid var(--ln);text-align:left;font-size:13px"',
  rt=[...MT,{n:'gdelt (no proxy)',k:'gdelt'}].map(m=>{const h=MH[m.k||m.n]||{ok:0,bad:0,f:0,d:0},st=h.d>Date.now()?'paused':(h.ok||h.bad)?(h.f?'failing':'working'):'not used yet';
@@ -422,12 +440,66 @@ document.addEventListener('click',e=>{const a=e.target.dataset&&e.target.dataset
  else if(a=='ws'){WK=wkn($('#wki').value);L.s('wk',WK);$('#wki').value=WK;mtb();[FD,RT,LF,MH].forEach(o=>Object.keys(o).forEach(k=>delete o[k]));L.s('fd',FD);hload();load();dgr()}
  else if(a=='dr'){[FD,RT,LF,MH].forEach(o=>Object.keys(o).forEach(k=>delete o[k]));L.s('fd',FD);hload();dgr()}});
 setInterval(()=>{if($('#dg').classList.contains('on'))dgr()},2e3);
-const BK=['bd','sv','cols','tg','hen','wk'];
+const BK=['bd','sv','cols','tg','hen','wk','users'];
 $('#sw').hidden=SOK;
 $('#bkb').onclick=()=>{$('#bt').value=JSON.stringify(Object.fromEntries(BK.map(k=>[k,L.g(k,null)]).filter(e=>e[1]!=null)));$('#bk').classList.add('on')};
 document.addEventListener('click',e=>{const a=e.target.dataset&&e.target.dataset.k;if(!a)return;
  if(a=='x')$('#bk').classList.remove('on');
  else if(a=='c'){cp($('#bt').value);e.target.textContent='Copied';setTimeout(()=>e.target.textContent='Copy',1500)}
  else if(a=='r'){try{const o=JSON.parse($('#bt').value);BK.forEach(k=>{if(o[k]!=null)L.s(k,o[k])});B=L.g('bd',{});SV=L.g('sv',{});COLS=L.g('cols',['Research']);CC=COLS[0];HEN=new Set(L.g('hen',OUT.map(o=>o[0])));WK=L.g('wk','')||'';mtb();rb();rk();hsv();hf();$('#bk').classList.remove('on')}catch(x){e.target.textContent='Not valid backup text'}}});
-hload();hsv();go(L.g('view','dash'));
+/* login: a simple gate. Logins are stored as salted hashes, never as plain text. It keeps casual visitors out; it is not bank-grade security, because the page runs in the browser. */
+function sha(ascii){function rr(v,a){return(v>>>a)|(v<<(32-a))}
+ var mp=Math.pow,mw=mp(2,32),i,j,result='',words=[],abl=ascii.length*8,hash=sha.h=sha.h||[],k=sha.k=sha.k||[],pc=k.length,ic={};
+ for(var c=2;pc<64;c++){if(!ic[c]){for(i=0;i<313;i+=c)ic[i]=c;hash[pc]=(mp(c,.5)*mw)|0;k[pc++]=(mp(c,1/3)*mw)|0}}
+ ascii+='\x80';while(ascii.length%64-56)ascii+='\x00';
+ for(i=0;i<ascii.length;i++){j=ascii.charCodeAt(i);if(j>>8)return'';words[i>>2]|=j<<((3-i)%4)*8}
+ words[words.length]=((abl/mw)|0);words[words.length]=abl;
+ for(j=0;j<words.length;){var w=words.slice(j,j+=16),oh=hash;hash=hash.slice(0,8);
+  for(i=0;i<64;i++){var w15=w[i-15],w2=w[i-2],a=hash[0],e=hash[4],t1=hash[7]+(rr(e,6)^rr(e,11)^rr(e,25))+((e&hash[5])^((~e)&hash[6]))+k[i]+(w[i]=(i<16)?w[i]:(w[i-16]+(rr(w15,7)^rr(w15,18)^(w15>>>3))+w[i-7]+(rr(w2,17)^rr(w2,19)^(w2>>>10)))|0),t2=(rr(a,2)^rr(a,13)^rr(a,22))+((a&hash[1])^(a&hash[2])^(hash[1]&hash[2]));
+   hash=[(t1+t2)|0].concat(hash);hash[4]=(hash[4]+t1)|0}
+  for(i=0;i<8;i++)hash[i]=(hash[i]+oh[i])|0}
+ for(i=0;i<8;i++)for(j=3;j+1;j--){var b=(hash[i]>>(j*8))&255;result+=((b<16)?0:'')+b.toString(16)}
+ return result}
+const hh=(u,p,sl)=>{let h=sha(unescape(encodeURIComponent(sl+':'+u.toLowerCase()+':'+p)));for(let i=1;i<2000;i++)h=sha(h+sl);return h};
+/* built-in logins. Add more lines here, or use Logins in the header (admins only). r is 'admin' or 'user'. */
+const USERS=[
+ {u:'admin',s:'agz4zpfffwr2',h:'559d8e847fec9e8e320959a95fa12a30322211a28c10f245236868b9eb262e63',r:'admin'},
+ {u:'newsroom',s:'m4fpy8yhd1js',h:'5bf1dd68fdb234f85f36b753c1458c11fbd05d698f07a8573feccae9574bcd22',r:'user'},
+ {u:'editor',s:'5zfmdvp4rfyi',h:'3eb974de595eac99466ebb943c2270aa1843f53a5cac03a8e51bb700fafb89c5',r:'user'}];
+const merge=st=>{const m=new Map(USERS.map(a=>[a.u.toLowerCase(),a]));st.forEach(a=>m.set(a.u.toLowerCase(),a));return[...m.values()]};
+const allU=()=>merge(L.g('users',[]));
+let AUTH=null,BOOTED=0,FL=0,LK=0;
+function boot2(){hload();hsv();go(L.g('view','dash'))}
+function boot(){if(BOOTED)return;BOOTED=1;boot1();boot2()}
+function sessUser(){const x=L.g('sess',null);return x&&x.exp>Date.now()?allU().find(a=>a.u.toLowerCase()==String(x.u).toLowerCase())||null:null}
+function enter(a,keep){AUTH=a;if(keep)L.s('sess',{u:a.u,exp:Date.now()+432e5});document.body.classList.remove('lock');$('#lgn').hidden=true;$('#lp').value='';$('#who').textContent=a.u;$('#lo').hidden=false;$('#mlb').hidden=a.r!='admin';boot()}
+function login(){const m=$('#lm'),n=Date.now();
+ if(n<LK){m.textContent='Too many attempts. Try again in '+Math.ceil((LK-n)/1e3)+' seconds.';return}
+ const u=$('#lu').value.trim(),p=$('#lp').value;if(!u||!p){m.textContent='Enter your username and password.';return}
+ const a=allU().find(x=>x.u.toLowerCase()==u.toLowerCase()),h=hh(u,p,a?a.s:'x0x0x0x0x0x0');
+ if(a&&h==a.h){FL=0;m.textContent='';enter(a,$('#lkp').checked)}
+ else if(++FL>=5){FL=0;LK=n+3e4;m.textContent='Too many attempts. Try again in 30 seconds.'}
+ else m.textContent='Wrong username or password.'}
+function lout(){L.s('sess',null);AUTH=null;document.body.classList.add('lock');$('#lgn').hidden=false;$('#lo').hidden=true;$('#mlb').hidden=true;$('#who').textContent='';$('#lm').textContent='';$('#lu').focus()}
+const rnd=()=>{let t='';const c=window.crypto;for(let i=0;i<12;i++)t+='abcdefghijklmnopqrstuvwxyz0123456789'[(c&&c.getRandomValues?c.getRandomValues(new Uint8Array(1))[0]:Math.random()*256|0)%36];return t};
+function mlr(){const st=L.g('users',[]).map(a=>a.u.toLowerCase()),me=AUTH&&AUTH.u.toLowerCase();
+ $('#mlc').innerHTML=allU().map(a=>{const k=a.u.toLowerCase(),inf=USERS.some(b=>b.u.toLowerCase()==k),ov=st.includes(k),note=inf?(ov?'default, changed in this browser':'built in'):'added in this browser';
+  return`<div class="row" style="padding:8px 0;align-items:center"><div style="flex:1"><b>${esc(a.u)}</b> <span class="st">${a.r=='admin'?'Admin':'User'}, ${note}${k==me?', you':''}</span></div>${ov&&k!=me?`<button class="b" data-k="md" data-u="${esc(a.u)}">${inf?'Reset to default':'Remove'}</button>`:''}</div>`}).join('')}
+function mla(){const m=$('#mm'),u=$('#nu').value.trim(),p=$('#np').value,r=$('#nr').value;
+ if(!/^[a-z0-9._-]{3,30}$/i.test(u)){m.textContent='Username: 3 to 30 letters, numbers, dot, dash or underscore.';return}
+ if(p.length<8){m.textContent='Password needs at least 8 characters.';return}
+ const k=u.toLowerCase(),sl=rnd(),a={u,s:sl,h:hh(u,p,sl),r},st=L.g('users',[]).filter(x=>x.u.toLowerCase()!=k).concat(a);
+ if(!merge(st).some(x=>x.r=='admin')){m.textContent='There must always be at least one admin.';return}
+ L.s('users',st);$('#nu').value=$('#np').value='';m.textContent='Saved. "'+u+'" can sign in now.';
+ const c=$('#mcode');c.hidden=false;c.value="{u:'"+u+"',s:'"+sl+"',h:'"+a.h+"',r:'"+r+"'},";mlr()}
+$('#lgo').onclick=login;
+['#lu','#lp'].forEach(i=>$(i).addEventListener('keydown',e=>{if(e.key=='Enter')login()}));
+$('#lsp').onclick=()=>{const p=$('#lp'),h=p.type=='password';p.type=h?'text':'password';$('#lsp').textContent=h?'Hide':'Show'};
+$('#lo').onclick=lout;
+$('#mlb').onclick=()=>{mlr();$('#mm').textContent='';$('#mcode').hidden=true;$('#ml').classList.add('on')};
+document.addEventListener('click',e=>{const a=e.target.dataset&&e.target.dataset.k;
+ if(a=='mx')$('#ml').classList.remove('on');else if(a=='ma')mla();
+ else if(a=='md'){const k=String(e.target.dataset.u).toLowerCase(),st=L.g('users',[]).filter(x=>x.u.toLowerCase()!=k);if(merge(st).some(x=>x.r=='admin')){L.s('users',st);mlr()}}});
+{const su=sessUser();if(su)enter(su,false);else $('#lu').focus()}
+
 </script></body></html>
